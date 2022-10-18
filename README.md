@@ -1,9 +1,9 @@
-# `@l4dybird/nuxt3-quasar-module`
+# `@l4dybird/nuxt3-vuetify-module`
 
 ## Installation
 
 ```shell
-npm i @l4dybird/nuxt3-quasar-module
+npm i @l4dybird/nuxt3-vuetify-module
 ```
 
 ## Usage
@@ -26,8 +26,6 @@ Add to `modules` (Nuxt 3) in `nuxt.config.ts`:
 
 ```typescript
 // Nuxt 3
-import langDe from 'quasar/lang/de';
-
 export default defineNuxtConfig({
   ssr: false,
   modules: [

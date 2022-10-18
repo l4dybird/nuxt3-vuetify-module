@@ -1,10 +1,11 @@
 {
   "name": "@l4dybird/nuxt3-vuetify-module",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Nuxt3 Module Template",
   "keywords": [
     "nuxt",
-    "vue"
+    "vue",
+    "vuetify"
   ],
   "homepage": "https://github.com/l4dybird/@l4dybird/nuxt3-vuetify-module",
   "bugs": {
