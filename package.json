@@ -1,6 +1,6 @@
 {
   "name": "@l4dybird/nuxt3-vuetify-module",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Nuxt3 Module Template",
   "keywords": [
     "nuxt",
@@ -34,19 +34,25 @@
     "dev:build": "nuxi build playground",
     "dev:generate": "nuxi generate playground",
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
-    "test": "exit 0",
-    "test:types": "nuxi typecheck"
+    "test": "npm run dev:prepare && vitest",
+    "test:coverage": "vitest --coverage",
+    "test:types": "nuxi typecheck",
+    "test:watch": "vitest -w"
   },
   "dependencies": {
     "@mdi/font": "^7.0.96",
-    "@nuxt/kit": "^3.0.0-rc.11",
+    "@nuxt/kit": "^3.0.0-rc.12",
     "sass": "^1.55.0",
-    "vuetify": "^3.0.0-beta.13"
+    "vuetify": "^3.0.0-beta.14"
   },
   "devDependencies": {
     "@nuxt/module-builder": "latest",
-    "nuxt": "^3.0.0-rc.11",
+    "@nuxt/test-utils": "^3.0.0-rc.12",
+    "@vitest/coverage-c8": "^0.24.3",
+    "nuxt": "^3.0.0-rc.12",
+    "playwright": "^1.27.0",
     "typescript": "^4.8.4",
+    "vitest": "^0.24.3",
     "vue-tsc": "^1.0.7"
   },
   "volta": {

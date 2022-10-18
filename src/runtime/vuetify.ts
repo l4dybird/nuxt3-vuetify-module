@@ -1,12 +1,9 @@
 import { defineNuxtPlugin, useAppConfig } from '#imports';
 import {
   createVuetify,
-  Blueprint,
   DisplayBreakpoint,
   DisplayThresholds,
   IconOptions,
-  LocaleAdapter,
-  VuetifyOptions,
 } from 'vuetify';
 import * as components from 'vuetify/components';
 import * as directives from 'vuetify/directives';
@@ -78,6 +75,19 @@ interface LocaleOptions {
   fallbackLocale?: string;
   messages?: LocaleMessages;
 }
+interface VuetifyOptions {
+  aliases?: Record<string, any>;
+  blueprint?: Blueprint;
+  components?: Record<string, any>;
+  directives?: Record<string, any>;
+  defaults?: DefaultsOptions;
+  display?: DisplayOptions;
+  theme?: ThemeOptions;
+  icons?: IconOptions;
+  locale?: LocaleOptions & RtlOptions;
+  ssr?: boolean;
+}
+interface Blueprint extends Omit<VuetifyOptions, 'blueprint'> {}
 
 export class VuetifyModuleOptions implements VuetifyOptions {
   public aliases?: Record<string, any>;
@@ -88,7 +98,7 @@ export class VuetifyModuleOptions implements VuetifyOptions {
   public display?: DisplayOptions;
   public theme?: ThemeOptions;
   public icons?: IconOptions;
-  public locale?: (LocaleOptions & RtlOptions) | (LocaleAdapter & RtlOptions);
+  public locale?: LocaleOptions & RtlOptions;
   public ssr?: boolean;
   constructor(args: VuetifyOptions) {
     args = args ?? {};
